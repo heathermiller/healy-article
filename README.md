@@ -7,6 +7,10 @@ beautifully typeset using one of [Kieran Healy](http://kieranhealy.org/)'s
 **Example:**
 ![page-thumbnail.png]()
 
+This version builds slightly on Kieran's template by merely including the
+[minted package](https://github.com/gpoore/minted) for beautiful source code
+formatting.
+
 ### Why this repo?
 
 This repo serves only to provide a minimum working version of Kieran's basic
