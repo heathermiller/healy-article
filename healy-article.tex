@@ -1,0 +1,148 @@
+%%  Article template for use with http://kjhealy.github.com/latex-custom-kjh
+%% This template presumes you are using xelatex, not pdflatex
+
+
+%% The template requires the memoir class
+\documentclass[11pt,article,oneside]{memoir}
+
+%% Script-based version control tag (requires vc package)
+% \input{vc} % comment this out if you don't use the vc package
+
+%% Required packages
+\usepackage{graphicx,url}
+\usepackage{rotating}
+\usepackage{memoir-article-styles} %% in latex-custom-kjh/needs-memoir
+\usepackage{minted}
+\usemintedstyle{trac}
+
+%% Choose font system
+\usepackage{fontspec} % comment out if not using xelatex
+\usepackage{xunicode} % comment out if not using xelatex
+
+%% Biblatex: You should be using biblatex + biber instead of e.g. natbib + bibtex
+%% Comment these lines out and replace them with your own bibliographic setup if not.
+%% Chicago support packages come with texlive 2011; biber needs to be
+%% installed separately. Get it from
+%% http://biblatex-biber.sourceforge.net/
+\usepackage[american]{babel}
+\usepackage[babel,autostyle]{csquotes}
+\usepackage[style=chicago-authordate,abbreviate=true,backend=biber]{biblatex}
+
+%% Your bibliography file or files go here. Biblatex allows for
+%% multiple \addbibresource{} statements. If using bibtex you must use
+%% the older \bibliography{} declaration instead
+\addbibresource{socbib.bib}    % http://kjhealy.github.com/socbibs/
+
+%% Some formatting tweaks to biblatex-chicago. Comment out if not
+%% using this biblatex style.
+
+%% Enclose article titles in quotes (this puts article titles in Title Case as well)
+\DeclareFieldFormat[article]{title}{\mkbibquote{#1}}
+
+%% Ensure book titles are in Title Case Like This, not Sentence case like this.
+\DeclareFieldFormat[book]{title}{%
+  \mkbibemph{#1}\isdot} % for books
+\DeclareFieldFormat{booktitle}{\mkbibemph{#1}} % for edited volumes
+
+%% Name, Title, Affiliation, Contact. Change as needed.
+\def\myaffiliation{EPFL, Switzerland}
+\def\myauthor{Heather Miller}
+\def\myemail{\small{\texttt{\href{mailto:heather.miller@epfl.ch}{heather.miller@epfl.ch}}}}
+\def\mytitle{Article Title}
+\def\mykeywords{Heather, Miller, Heather Miller, Scala, Programming Languages, Functional Programming, Distributed Programming}
+
+
+%% Hyperlinks
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[xetex,
+	colorlinks=true,
+	urlcolor=BlueViolet, % external links
+        citecolor=BlueViolet, % citations
+        filecolor=BlueViolet, % local files
+	plainpages=false,
+  	pdfpagelabels,
+  	bookmarksnumbered,
+  	pdftitle={\mytitle},
+  	pdfauthor={\myauthor},
+  	pdfkeywords={\mykeywords}
+  	]{hyperref}
+
+\begin{document}
+
+%%% xelatex font choices
+%% You will need to buy these fonts or change the names to fonts you
+%% own, or comment out altogether if using pdflatex instead of
+%% xelatex.
+\setromanfont[Mapping=tex-text,Numbers=OldStyle,BoldFont={Minion Pro Bold}]{Minion Pro}
+\setsansfont[Mapping=tex-text]{Minion Pro}
+% \setmonofont[Mapping=tex-text,Scale=MatchLowercase]{PragmataPro}
+\setmonofont[Mapping=tex-text,Scale=MatchLowercase,BoldFont={Consolas Bold}]{Consolas}
+
+% Make figures as wide as the margins
+\setkeys{Gin}{width=1\textwidth}
+
+%% Layout and styling: this style is defined in defined in
+%% latex-custom-kjh/needs-memoir/, along with several alternatives.
+\chapterstyle{article-4}
+
+\pagestyle{kjh}
+
+\title{\bigskip \bigskip {{\mytitle}}}
+
+\author{\myauthor \\
+  \emph{\myaffiliation} \\ \myemail}% \thanks{I am grateful to }
+
+\date{{\scriptsize{\texttt{}}}}
+% \date{{\scriptsize{\texttt{\href{mailto:heather.miller@epfl.ch}{heather.miller@epfl.ch}}}}}
+
+\published{\footnotesize Incomplete Draft. Please do not cite without permission.}
+
+
+\published{Incomplete Draft. Please do not cite without permission.}
+
+\maketitle
+
+% Include version information in footer.
+\thispagestyle{kjhgit}
+
+\begin{abstract}
+  \textit{Abstract:} And consider this an abstract.
+\end{abstract}
+
+% \epigraphfontsize{\footnotesize}
+% \setlength{\epigraphwidth}{4in}
+% \setlength{\epigraphrule}{0pt}
+% \setlength{\beforeepigraphskip}{0pt}
+% \setlength{\afterepigraphskip}{0pt}
+%
+% \epigraph{}{}
+
+\section{Introduction}
+
+Lorem ipsum dolor sit amet, et his nostro eirmod dissentiunt. Vel audiam
+maiestatis et. Te duo brute lucilius oportere, ea utamur nostrud duo, cu vis
+nobis tractatos efficiendi. In cibo alienum vis. Sumo salutatus duo ei, sit zril
+sensibus ad. Sed quodsi albucius ne, solum docendi tacimates eu mei, has liber
+neglegentur contentiones id.
+
+\begin{minted}{scala}
+val x = future { someExpensiveComputation() }
+val y = future { someOtherExpensiveComputation() }
+val z = for (a <- x; b <- y) yield a*b
+for (c <- z) println("Result: " + c)
+println("Meanwhile, the main thread goes on!")
+\end{minted}
+
+An summo alienum qualisque vix, cum odio atqui ad. An pri decore comprehensam,
+quas appareat eu eam, vis nisl vivendum electram ei. Has ex alii veniam
+theophrastus, quas facilis ex vim, duo viderer molestie ne. Hinc persecuti
+conclusionemque duo id, te sit tale iusto, nusquam eligendi conclusionemque vim
+ut. An nam omnis veniam tamquam, ea essent vivendo vel, assentior democritum te
+cum.
+
+
+
+%% Bibliography. If you are not using biblatex, comment out this line.
+\printbibliography
+
+\end{document}

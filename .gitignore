@@ -1,0 +1,8 @@
+.DS_Store
+_minted-test
+*.log
+*.aux
+*.bcf
+*.out
+*.pdf
+*.run.xml
