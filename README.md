@@ -9,7 +9,7 @@ beautifully typeset using one of [Kieran Healy](http://kieranhealy.org/)'s
 
 This version builds slightly on Kieran's template by merely including the
 [minted package](https://github.com/gpoore/minted) for beautiful source code
-formatting.
+highlighting and formatting.
 
 ### Why this repo?
 
