@@ -5,6 +5,7 @@ beautifully typeset using one of [Kieran Healy](http://kieranhealy.org/)'s
 [excellent LaTeX templates](https://github.com/kjhealy/latex-custom-kjh).
 
 **Example:**
+
 ![page-thumbnail.png]()
 
 This version builds slightly on Kieran's template by merely including the
