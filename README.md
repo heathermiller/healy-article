@@ -6,7 +6,7 @@ beautifully typeset using one of [Kieran Healy](http://kieranhealy.org/)'s
 
 **Example:**
 
-![https://raw.githubusercontent.com/heathermiller/healy-article/master/page-thumbnail.png]()
+![](https://raw.githubusercontent.com/heathermiller/healy-article/master/page-thumbnail.png)
 
 This version builds slightly on Kieran's template by merely including the
 [minted package](https://github.com/gpoore/minted) for beautiful source code
